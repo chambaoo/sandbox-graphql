@@ -1,0 +1,9 @@
+services:
+  node:
+    image: node:18
+    working_dir: /apps/gql
+    volumes:
+      - ./apps/gql:/apps/gql
+    command: node server.js  # コンテナが起動したときのコマンド
+    ports:
+      - "4000:4000"
