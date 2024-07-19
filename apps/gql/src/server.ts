@@ -1,14 +1,7 @@
-const express = require("express")
-const { createHandler } = require("graphql-http/lib/use/express")
-const { buildSchema } = require("graphql")
- 
-// Construct a schema, using GraphQL schema language
-const schema = buildSchema(`
-  type Query {
-    hello: String
-  }
-`)
- 
+import express from 'express';
+import { createHandler } from 'graphql-http/lib/use/express';
+import { schema } from './schema';
+
 // The root provides a resolver function for each API endpoint
 const root = {
   hello() {
@@ -16,7 +9,7 @@ const root = {
   },
 }
  
-const app = express()
+const app = express();
  
 // Create and use the GraphQL handler.
 app.all(
@@ -25,9 +18,9 @@ app.all(
     schema: schema,
     rootValue: root,
   })
-)
- 
+);
+
 // Start the server at port
-app.listen(4000)
-console.log("Running a GraphQL API server at http://localhost:4000/graphql")
+app.listen(4000);
+console.log("Running a GraphQL API server at http://localhost:4000/graphql");
 
