@@ -1,9 +1,9 @@
 services:
   node:
     image: node:18
-    working_dir: /apps/gql
+    working_dir: /apps/gql/src
     volumes:
       - ./apps/gql:/apps/gql
-    command: node server.js  # コンテナが起動したときのコマンド
+    command: sh -c "npm install -g pnpm && pnpm install && node server.ts"
     ports:
       - "4000:4000"
