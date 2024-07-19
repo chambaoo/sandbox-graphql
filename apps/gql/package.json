@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node dist/server.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
@@ -10,7 +12,14 @@
   "description": "",
   "dependencies": {
     "express": "^4.19.2",
+    "express-graphql": "^0.12.0",
     "graphql": "^16.9.0",
-    "graphql-http": "^1.22.1"
+    "graphql-http": "^1.22.1",
+    "typescript": "^5.5.3"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/express-graphql": "^0.9.0",
+    "@types/node": "^20.14.11"
   }
 }

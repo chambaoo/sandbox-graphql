@@ -4,6 +4,6 @@ services:
     working_dir: /apps/gql/src
     volumes:
       - ./apps/gql:/apps/gql
-    command: sh -c "npm install -g pnpm && pnpm install && node server.ts"
+    command: sh -c "npm install -g pnpm && pnpm install && pnpm run build && pnpm start"
     ports:
       - "4000:4000"
