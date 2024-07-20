@@ -1,5 +1,5 @@
 import { GraphQLSchema, GraphQLObjectType, GraphQLString } from 'graphql';
-import { resolvers } from './resolvers';
+import { resolvers } from '../resolvers/resolvers';
 
 // Define the Query type
 const QueryType = new GraphQLObjectType({

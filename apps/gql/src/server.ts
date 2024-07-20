@@ -1,6 +1,6 @@
 import express from 'express';
 import { createHandler } from 'graphql-http/lib/use/express';
-import { schema } from './schema';
+import { schema } from './schema/schema';
 
 // The root provides a resolver function for each API endpoint
 const root = {
