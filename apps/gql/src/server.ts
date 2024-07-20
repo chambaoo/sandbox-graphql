@@ -2,13 +2,22 @@ import express from 'express';
 import { createHandler } from 'graphql-http/lib/use/express';
 import { schema } from './schema/schema';
 
+// Dummy user data
+const users = [
+  { id: '01J389TGR4HCXY2N105HD4Y6AS', name: 'abc', email: 'abc@example.com' },
+  { id: '01J389TNWGEQP3QCGES42H7ZWA', name: 'xyz', email: 'xyz@example.com' },
+];
+
 // The root provides a resolver function for each API endpoint
 const root = {
   hello() {
     return "Hello world!"
   },
+  user({ id }: { id: string }) {
+    return users.find(user => user.id === id) || null;
+  }
 }
- 
+
 const app = express();
  
 // Create and use the GraphQL handler.
