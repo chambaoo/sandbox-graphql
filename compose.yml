@@ -7,3 +7,5 @@ services:
     command: sh -c "npm install -g pnpm && pnpm install && pnpm run build && pnpm start"
     ports:
       - "4000:4000"
+    environment:
+      - WATCHPACK_POLLING=true
