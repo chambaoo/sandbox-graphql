@@ -10,5 +10,6 @@ export const resolvers = {
 
       // Find user by id
       return users.find(user => user.id === args.id) || null;
-    },  },
+    },
+  },
 };
